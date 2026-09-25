@@ -1,3 +1,1 @@
-CREATE DATABASE `my_database1`;
-
-SHOW DATABASES;
+DROP DATABASE IF EXISTS `my_database1`;
