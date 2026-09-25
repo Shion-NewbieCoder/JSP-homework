@@ -1,0 +1,3 @@
+CREATE DATABASE `my_database1`;
+
+SHOW DATABASES;
