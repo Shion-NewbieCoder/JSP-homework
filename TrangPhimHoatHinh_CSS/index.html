@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bé Vui Xem – trang xem hoạt hình tiếng Việt, giao diện học tập HTML5 với video và iframe YouTube.">
+  <title>Bé Vui Xem | Phim hoạt hình và bài học cho bé</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="dau-trang">
+    <div class="header-inner">
+      <a href="#dau-trang" class="brand" aria-label="Bé Vui Xem - về đầu trang">
+        <span class="brand-mark" aria-hidden="true">▶</span>
+        <span class="brand-copy"><strong>Bé Vui Xem</strong><small>Góc hoạt hình an lành</small></span>
+      </a>
+      <form class="header-search" id="searchForm" role="search">
+        <label for="searchInput" class="visually-hidden">Tìm phim theo tên</label>
+        <span aria-hidden="true" class="search-icon">⌕</span>
+        <input type="search" id="searchInput" placeholder="Tìm phim bé thích..." autocomplete="off">
+        <button type="submit">Tìm phim</button>
+      </form>
+      <div class="header-tag"><span aria-hidden="true">✦</span> Không có khung quảng cáo</div>
+    </div>
+  </header>
+
+  <nav class="top-nav" aria-label="Điều hướng chính">
+    <div class="nav-inner">
+      <a href="#danh-sach" class="nav-link active" data-nav="all">⌂ <span>Trang chủ</span></a>
+      <a href="#danh-sach" class="nav-link" data-nav="skills">♡ <span>Kỹ năng sống</span></a>
+      <a href="#danh-sach" class="nav-link" data-nav="family">♧ <span>Gia đình</span></a>
+      <a href="#danh-sach" class="nav-link" data-nav="html5">▣ <span>Video HTML5</span></a>
+      <span class="nav-right">Một trang xem phim nhẹ nhàng, dễ dùng cho bé</span>
+    </div>
+  </nav>
+
+  <div class="page-shell">
+    <section class="intro-banner" aria-label="Giới thiệu">
+      <div class="banner-copy"><span class="eyebrow">KHO TÀI LIỆU HOẠT HÌNH CHỌN LỌC</span>
+        <h1>Xem vui mỗi ngày,<br><em>học điều hay cùng bé!</em></h1>
+        <p>Bài học nhỏ về an toàn, gia đình và tình bạn qua những video gần gũi bằng tiếng Việt.</p>
+      </div>
+      <div class="banner-art" aria-hidden="true"><span class="star one">✦</span><span class="star two">✳</span><span class="bubble cloud">☁</span><span class="bubble sun">☀</span><span class="bear">🐻</span><span class="rabbit">🐰</span><span class="hill"></span></div>
+    </section>
+
+    <div class="content-grid">
+      <aside class="left-content" id="danh-sach" aria-labelledby="playlistTitle">
+        <div class="panel-heading"><div><p class="mini-label">THƯ VIỆN</p><h2 id="playlistTitle">Danh sách video</h2></div><span class="count-pill" id="videoCount">5 phim</span></div>
+        <div class="sort-wrap"><label for="sortSelect">Sắp xếp</label><select id="sortSelect"><option value="newest">Mới cập nhật</option><option value="popular">Xem nhiều (tham khảo)</option><option value="name">Tên A → Z</option></select></div>
+        <div class="playlist" id="playlist" aria-live="polite"></div>
+        <p class="playlist-hint" id="playlistHint">Chọn một video để bắt đầu xem nhé!</p>
+      </aside>
+
+      <main class="right-content" id="xem-phim">
+        <div class="player-panel">
+          <div class="player-topline"><span class="now-playing"><span class="pulsing-dot"></span> ĐANG XEM</span><span class="quality-tag" id="qualityTag">HTML5 · HD 720p</span></div>
+          <div class="player-frame">
+            <video id="html5Player" controls playsinline preload="metadata" poster="assets/video-poster.jpg" aria-label="Phim hoạt hình HTML5">
+              <source src="assets/be-hoc-den-giao-thong-720p.mp4" type="video/mp4">
+              Trình duyệt không hỗ trợ video HTML5. <a href="assets/be-hoc-den-giao-thong-720p.mp4">Mở tập phim tại đây</a>.
+            </video>
+            <iframe id="youtubePlayer" title="Video hoạt hình trên YouTube" src="about:blank" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" hidden></iframe>
+          </div>
+          <div class="player-details">
+            <div class="content-badges"><span class="type-pill" id="typePill">Bài học kỹ năng</span><span class="safety-pill">✓ Chọn lọc cho thiếu nhi</span></div>
+            <h2 id="currentTitle">Bé học đèn giao thông — Video HTML5</h2>
+            <p id="currentDescription">Video giáo dục ngắn do bài tập tự tạo, có lời đọc tiếng Việt, minh họa 3 màu đèn giao thông.</p>
+            <div class="video-meta"><span id="currentChannel">Bé Vui Xem · Video tự tạo</span><span id="currentDate">15/10/2026</span></div>
+            <a id="sourceLink" class="source-link" href="assets/be-hoc-den-giao-thong-720p.mp4" target="_blank" rel="noopener noreferrer">↗ Xem nguồn video</a>
+          </div>
+        </div>
+
+        <section class="notes-panel" aria-labelledby="notesTitle"><div class="notes-icon" aria-hidden="true">✿</div><div><h3 id="notesTitle">Góc dành cho phụ huynh</h3><p>Các video trong danh sách được chọn theo chủ đề nhẹ nhàng, kỹ năng sống và gia đình. Nội dung YouTube được nhúng từ kênh gốc, cần có Internet và có thể bị hạn chế phát nhúng hoặc hiển thị quảng cáo do nền tảng. Website demo không tự chèn quảng cáo.</p></div></section>
+      </main>
+    </div>
+  </div>
+  <footer class="site-footer"><div class="footer-inner"><span><strong>Bé Vui Xem</strong> · Bài thực hành HTML5, CSS & JavaScript</span><span>Video HTML5 tự tạo · YouTube thuộc các chủ sở hữu tương ứng · © 2026</span></div></footer>
+</body>
+</html>
