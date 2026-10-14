@@ -1,0 +1,53 @@
+/* Microsoft Surface-inspired practice layout. Bootstrap 5 provides the layout, spacing and components. */
+:root {--surface-ink:#171c25; --surface-blue:#1555bb; --surface-light:#f7f8fa;}
+html {scroll-behavior:smooth; scroll-padding-top:110px;}
+body {font-family: "Segoe UI", system-ui, -apple-system, sans-serif;color:var(--surface-ink);background:#fff;}
+.btn-primary {--bs-btn-bg:#145ac9;--bs-btn-border-color:#145ac9;--bs-btn-hover-bg:#0645a9;--bs-btn-hover-border-color:#0645a9;}
+.announcement {background:#eef3fd;color:#243956;}
+.announcement a {color:#004da2;text-decoration:underline;text-underline-offset:3px;}
+.site-header {z-index:1030;}
+.nav-link {color:#242830!important;font-size:.93rem;padding-inline:0!important;white-space:nowrap;}
+.nav-link:hover,.nav-link:focus-visible {text-decoration:underline;text-underline-offset:5px;}
+.navbar-brand {font-size:1rem;}
+.ms-mark {display:grid;grid-template-columns:repeat(2,11px);gap:2px;width:24px;height:24px;flex-shrink:0;}
+.ms-mark i:nth-child(1){background:#f35325;}.ms-mark i:nth-child(2){background:#81bc06;}.ms-mark i:nth-child(3){background:#05a6f0;}.ms-mark i:nth-child(4){background:#ffba08;}
+.ms-word {font-size:1.18rem;letter-spacing:-.045em;font-weight:600;}
+.brand-divider {height:25px;width:1px;background:#9da4b0;margin-inline:5px;}
+.surface-word {font-size:1.12rem;font-weight:650;}
+.hero-section {background:linear-gradient(120deg,#f0f5fb 0%,#e9f3ff 50%,#d8e9fa 100%);}
+.hero-layout {min-height:590px;}
+.eyebrow {letter-spacing:.14em;color:#1554aa;}
+.hero-section h1 {letter-spacing:-.065em;}
+.text-accent {color:#1555bb;}
+.hero-visual {min-height:455px;display:grid;place-items:center;}
+.hero-device {position:relative;width:100%;max-width:760px;filter:drop-shadow(0 20px 28px rgba(22,49,88,.08));border-radius:6px;}
+.hero-orbit {position:absolute;inset:11% 3%;border:1px solid rgba(66,114,180,.12);border-radius:50%;transform:rotate(-15deg);}
+.hero-label {position:absolute;bottom:11%;right:0;border-radius:3px;display:flex;align-items:center;gap:10px;}
+.tiny-dot {display:inline-block;width:9px;height:9px;border-radius:50%;background:#0c77ba;}
+.shortcut {min-height:70px;transition:color .2s;}
+.shortcut:hover {color:#005cb8!important;}
+.shortcut-icon {display:grid;place-items:center;width:43px;height:43px;background:#f2f5fa;color:#185cba;font-size:1.4rem;flex-shrink:0;border-radius:5px;}
+.py-lg-6 {padding-top:5.25rem!important;padding-bottom:5.25rem!important;}
+.product-picture {background:#f1f5f9;min-height:220px;}
+.product-picture img {width:100%;aspect-ratio:5/4;object-fit:cover;transition:transform .35s;}
+.product-card {box-shadow:0 6px 28px rgba(33,57,84,.08);transition:transform .25s,box-shadow .25s;}
+.product-card:hover {transform:translateY(-5px);box-shadow:0 14px 34px rgba(33,57,84,.14);}
+.product-card:hover img {transform:scale(1.025);}
+.product-card .card-body {min-height:245px;}
+.product-overline {font-size:.72rem;font-weight:700;letter-spacing:.11em;color:#1358b6;}
+.product-card .stretched-link {text-underline-offset:4px;}
+.section-tint {background:#f6f7f9;}
+.feature-picture img {aspect-ratio:1.18;object-fit:cover;background:#e2e9f2;}
+.feature-rule {border-top:2px solid #1557b1;}
+.feature-rule .h4 {font-size:1.02rem;}
+.accessory-panel {background:#edf3f9;}
+.accessory-image {aspect-ratio:5/4;object-fit:cover;}
+.accordion-button:not(.collapsed) {background:#f3f7ff;color:#0b4fa8;box-shadow:none;}
+.accordion-button:focus {box-shadow:0 0 0 .2rem rgba(15,83,175,.16);}
+.accordion-item {border-color:#dde4ec;}
+.accordion-body {color:#59636f;line-height:1.8;}
+.footer {background:#f8f9fb;}
+.footer a {color:#343d49;text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+@media (max-width:991.98px) {.py-lg-6 {padding-block:3rem!important;}.hero-layout {min-height:auto;}.hero-visual{min-height:315px;}.hero-device {max-height:380px;object-fit:contain;}.hero-section .display-3{font-size:clamp(2.7rem,7vw,4.4rem);}.site-header .navbar-collapse {padding-bottom:.75rem;}.brand-divider{margin-inline:1px;}}
+@media (max-width:575.98px){.hero-visual {min-height:250px;}.hero-device{max-height:290px;}.hero-label{display:none!important;}.hero-section .display-3{font-size:2.6rem;}.shortcut {gap:.55rem!important;min-height:55px;font-size:.85rem;}.shortcut-icon {height:34px;width:34px;font-size:1.05rem;}.ms-word{font-size:1.03rem;}.surface-word{font-size:1.03rem;}.product-card .card-body{min-height:unset;}}
