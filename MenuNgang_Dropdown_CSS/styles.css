@@ -1,0 +1,74 @@
+/* Bai thuc hanh CodeGym: Menu ngang co dropdown. */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh menu ngang voi nen den, vien xam, cao 30px. */
+#menu {
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    border: 1px solid #CDCDCD;
+}
+
+#menu ul,
+#menu li {
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Lien ket trong menu chinh. */
+#menu li a {
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+
+/* Cac muc con xep theo chieu doc va rong hon menu chinh. */
+#menu ul ul li {
+    float: none;
+}
+
+#menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Hieu ung doi nen do khi dua chuot vao lien ket. */
+#menu li a:hover,
+#menu li a:focus-visible,
+#menu li:hover > a,
+#menu li:focus-within > a {
+    background-color: red;
+}
+
+/* An cac submenu va neo vi tri ngay duoi menu cha. */
+#menu ul ul {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 210px;
+    visibility: hidden;
+    z-index: 10;
+}
+
+/* Hover hoac focus vao muc cha thi hien submenu tuong ung. */
+#menu ul li:hover > ul,
+#menu ul li:focus-within > ul {
+    visibility: visible;
+}
