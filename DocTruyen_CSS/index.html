@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trang đọc truyện fantasy minh họa bài thực hành CSS: mục lục, liên kết chương, ảnh bìa, hiệu ứng hover và định dạng văn bản.">
+  <title>Coldra World | Trang đọc truyện — Thực hành CSS</title>
+  <!--
+    BAI THUC HANH CSS - CODEGYM
+    Buoc 1/5: Muc luc moi chuong dung h5, lien ket href="#chuong-...".
+    Buoc 2/3: Noi dung o section id="chuong-..."; click muc luc nhay dung section.
+    Buoc 4: Anh bia assets/bia-truyen.webp o dau trang.
+    Buoc 6: CSS EXTERNAL trong styles.css duoc nhung bang link.
+    Buoc 7: font-family, font-size, color, text-align center cho tieu de.
+    Buoc 8: border, background-color, padding cho muc luc; text-decoration, :hover cho a.
+    Buoc 9: line-height, text-align: justify, text-indent cho doan van.
+    De cham du ca HTML va CSS trong MOT LINK, xem README.md kem ma nguon HTML + CSS.
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="dau-trang">
+  <header class="cover" aria-label="Ảnh bìa truyện Coldra World">
+    <img src="assets/bia-truyen.webp" alt="Ảnh bìa fantasy Coldra World: một người ngồi ngắm thành phố ven biển dưới bầu trời trong xanh" width="1536" height="245">
+  </header>
+
+  <div class="page-intro">
+    <div class="eyebrow">✦ THƯ VIỆN TRUYỆN ✦</div>
+    <h1>Hành trình bắt đầu từ một bước chân</h1>
+    <p>Một câu chuyện nhỏ bên biển xanh, những lá thư bí ẩn và lòng can đảm để lên đường.</p>
+    <div class="intro-tags"><span>Fantasy</span><span>5 chương</span><span>Tiếng Việt</span></div>
+  </div>
+
+  <div class="page-layout">
+    <aside class="toc" id="muc-luc" aria-label="Mục lục truyện">
+      <div class="toc-heading"><span aria-hidden="true">☷</span> Mục lục truyện</div>
+      <div class="toc-items">
+        <h5 class="toc-entry"><a href="#chuong-1"><span class="toc-number">01</span><span>Chương 1: Khởi đầu tại Seawind</span><span class="toc-arrow" aria-hidden="true">↗</span></a></h5>
+        <h5 class="toc-entry"><a href="#chuong-2"><span class="toc-number">02</span><span>Chương 2: Bức thư không người gửi</span><span class="toc-arrow" aria-hidden="true">↗</span></a></h5>
+        <h5 class="toc-entry"><a href="#chuong-3"><span class="toc-number">03</span><span>Chương 3: Ánh đèn cuối vịnh</span><span class="toc-arrow" aria-hidden="true">↗</span></a></h5>
+        <h5 class="toc-entry"><a href="#chuong-4"><span class="toc-number">04</span><span>Chương 4: Lời hứa dưới trời sao</span><span class="toc-arrow" aria-hidden="true">↗</span></a></h5>
+        <h5 class="toc-entry"><a href="#chuong-5"><span class="toc-number">05</span><span>Chương 5: Bước chân đầu tiên</span><span class="toc-arrow" aria-hidden="true">↗</span></a></h5>
+      </div>
+      <div class="toc-note">“Mỗi cuộc phiêu lưu đều bắt đầu khi ta dám bước thêm một bước.”</div>
+    </aside>
+
+    <main class="reading-content" id="noi-dung">
+      <div class="reader-note">Chọn một chương trong mục lục để chuyển đến nội dung tương ứng. <span>↓</span></div>
+      <section class="chapter" id="chuong-1" aria-labelledby="title-chuong-1">
+        <div class="chapter-topline"><span>CHƯƠNG 01</span><span>✦</span><span>COLDRA WORLD · TRUYỆN MẪU</span></div>
+        <h2 id="title-chuong-1">Khởi đầu tại Seawind</h2>
+        <p class="chapter-subtitle">Một buổi sáng có mùi muối biển</p>
+        <div class="prose">
+          <p>Ở Seawind, buổi sáng luôn đến cùng tiếng chuông từ ngọn tháp phía cảng. Khi tiếng chuông thứ ba ngân lên, những người bán cá đã bày xong sạp, còn gió biển thì bắt đầu kéo những lá cờ nhỏ căng ra dưới nắng. Trong thành phố này, dường như ai cũng biết mình phải đi về đâu — trừ cậu thiếu niên đang đứng trên bức tường đá cũ.</p>
+          <p>Cậu đã ngắm đường chân trời ấy rất nhiều lần. Những con tàu đi qua rồi trở lại, mang về lụa, sách, chuyện kể và đôi khi cả những lá thư chưa kịp gửi. Thế giới ngoài kia rộng đến mức bản đồ treo ở quán trọ cũng chỉ vẽ được một phần. Ý nghĩ ấy khiến cậu vừa háo hức, vừa thấy tim mình đập nhanh hơn.</p>
+          <p>Hôm đó, thay vì xuống cảng như thường lệ, cậu đi về phía con đường nhỏ dẫn đến thư viện. Ở chân cầu thang, có một phong thư nằm ngay ngắn bên cạnh chậu hoa xanh. Trên bì thư không có tên người nhận, chỉ có một dòng chữ viết bằng mực bạc: “Gửi người vẫn còn biết lắng nghe tiếng gió.”</p>
+          <p>Cậu nhặt thư lên. Từ khoảnh khắc ấy, buổi sáng bình thường ở Seawind bắt đầu trở nên khác lạ.</p>
+        </div>
+        <div class="chapter-footer"><a class="back-to-top" href="#dau-trang">↑ Về đầu trang</a> <a class="next-chapter" href="#chuong-2">Đọc chương tiếp →</a></div>
+      </section>
+      <section class="chapter" id="chuong-2" aria-labelledby="title-chuong-2">
+        <div class="chapter-topline"><span>CHƯƠNG 02</span><span>✦</span><span>COLDRA WORLD · TRUYỆN MẪU</span></div>
+        <h2 id="title-chuong-2">Bức thư không người gửi</h2>
+        <p class="chapter-subtitle">Những điều chỉ thấy khi nhìn kỹ</p>
+        <div class="prose">
+          <p>Chiếc phong bì không được niêm bằng sáp, nhưng mở thế nào cũng không ra. Cậu xoay nó dưới ánh sáng, thấy những đường nét mảnh như mạng nhện chạy dọc mép giấy. Chúng chỉ hiện lên mỗi khi một cơn gió lùa qua ô cửa thư viện.</p>
+          <p>Người thủ thư già nhìn qua gọng kính, im lặng hồi lâu rồi nói rằng có những thứ không mở bằng sức mạnh. “Thử đọc điều mà lá thư đang chờ nghe,” ông bảo. Cậu định cười vì câu nói khó hiểu, nhưng rồi chợt nhận ra từ sáng đến giờ mình chỉ chăm chăm tìm cách mở nó mà chưa hề nghĩ vì sao nó xuất hiện.</p>
+          <p>Cậu ngồi xuống cạnh cửa sổ. Ở bên kia mái ngói, Seawind vẫn ồn ào và rực nắng. Cậu khẽ nói điều mình luôn giấu kín: “Tôi muốn bước ra ngoài thành phố này, nhưng tôi sợ đến một ngày mình chẳng còn nhận ra đường về.”</p>
+          <p>Một tiếng tách nhỏ vang lên. Phong thư tự mở, để lộ tấm bản đồ không có tên địa danh và một chấm sáng đang nhấp nháy ngoài vịnh. Người thủ thư chỉ mỉm cười: “Xem ra nó đã tìm đúng người.”</p>
+        </div>
+        <div class="chapter-footer"><a class="back-to-top" href="#dau-trang">↑ Về đầu trang</a> <a class="next-chapter" href="#chuong-3">Đọc chương tiếp →</a></div>
+      </section>
+      <section class="chapter" id="chuong-3" aria-labelledby="title-chuong-3">
+        <div class="chapter-topline"><span>CHƯƠNG 03</span><span>✦</span><span>COLDRA WORLD · TRUYỆN MẪU</span></div>
+        <h2 id="title-chuong-3">Ánh đèn cuối vịnh</h2>
+        <p class="chapter-subtitle">Khi bóng tối làm rõ con đường</p>
+        <div class="prose">
+          <p>Chiều xuống nhanh hơn cậu nghĩ. Đường tới ngọn hải đăng bị che bởi hàng cây thấp, đôi chỗ những rễ cây trồi lên như những bậc thang lộn xộn. Cậu từng nghe nhiều chuyện kể về ngọn tháp bỏ hoang, nhưng chưa lần nào bước xa đến thế.</p>
+          <p>Ở chân tháp, một chiếc đèn nhỏ vẫn cháy dù không có người trông nom. Ánh sáng ấy không soi xa; nó chỉ đủ để làm hiện rõ từng viên đá trước mũi giày. Cậu chợt hiểu rằng có lẽ hành trình không cần bắt đầu bằng một lời hứa lớn lao. Đôi khi người ta chỉ cần thấy được bước kế tiếp.</p>
+          <p>Cậu đặt tấm bản đồ lên bậc cửa. Chấm sáng đổi vị trí, trôi dọc theo bờ biển rồi dừng ở một con đường vẽ bằng mực xanh. Tiếng sóng vỗ đều đặn dưới chân vách đá. Phía sau lưng, những ngọn đèn đầu tiên của Seawind đã sáng lên như một dải sao thấp.</p>
+          <p>Cậu không tìm thấy kho báu hay bí mật vĩ đại nào trong ngọn hải đăng. Nhưng khi quay về, cậu mang theo điều mà lúc đi mình chưa có: một hướng đi.</p>
+        </div>
+        <div class="chapter-footer"><a class="back-to-top" href="#dau-trang">↑ Về đầu trang</a> <a class="next-chapter" href="#chuong-4">Đọc chương tiếp →</a></div>
+      </section>
+      <section class="chapter" id="chuong-4" aria-labelledby="title-chuong-4">
+        <div class="chapter-topline"><span>CHƯƠNG 04</span><span>✦</span><span>COLDRA WORLD · TRUYỆN MẪU</span></div>
+        <h2 id="title-chuong-4">Lời hứa dưới trời sao</h2>
+        <p class="chapter-subtitle">Một lời hứa vừa đủ</p>
+        <div class="prose">
+          <p>Tối hôm đó, mái nhà ở Seawind mát lạnh sau cơn gió lớn. Cậu ngồi trên bậc thềm, nhìn những vì sao xuất hiện lần lượt trên nền trời tím. Tấm bản đồ đặt cạnh tay vẫn lấp lánh, như thể nó biết cậu đang đắn đo.</p>
+          <p>Không ai có thể bảo đảm phía sau những ngọn đồi là điều tốt đẹp. Sẽ có những ngày mưa, những ngã rẽ sai, những lúc nhớ nhà đến mức chỉ muốn quay đầu. Cậu hiểu điều đó; cũng chính vì thế, quyết định lên đường mới có ý nghĩa.</p>
+          <p>“Tôi sẽ đi,” cậu nói nhỏ. “Nhưng tôi sẽ không quên nơi mình bắt đầu.” Gió đưa câu nói qua khu vườn, làm những chiếc lá va vào nhau lách tách như tiếng vỗ tay rất khẽ.</p>
+          <p>Bầu trời không trả lời. Nó chỉ trải rộng, bình yên và vô tận. Cậu nhận ra đôi khi một lời hứa không cần nhân chứng; chỉ cần mình còn nhớ để thực hiện.</p>
+        </div>
+        <div class="chapter-footer"><a class="back-to-top" href="#dau-trang">↑ Về đầu trang</a> <a class="next-chapter" href="#chuong-5">Đọc chương tiếp →</a></div>
+      </section>
+      <section class="chapter" id="chuong-5" aria-labelledby="title-chuong-5">
+        <div class="chapter-topline"><span>CHƯƠNG 05</span><span>✦</span><span>COLDRA WORLD · TRUYỆN MẪU</span></div>
+        <h2 id="title-chuong-5">Bước chân đầu tiên</h2>
+        <p class="chapter-subtitle">Một hành trình mới mở ra</p>
+        <div class="prose">
+          <p>Khi cổng thành mở vào sáng hôm sau, những người đi chợ bước qua như mọi ngày. Giữa dòng người ấy có một chiếc ba lô nhỏ, một bình nước, cuốn sổ còn trống và tấm bản đồ được gấp cẩn thận.</p>
+          <p>Cậu dừng lại ở cây cầu nhìn xuống vịnh. Từ đây, Seawind trông gần gũi hơn bao giờ hết: ngọn tháp đồng hồ, mái thư viện, những cánh buồm trắng. Cậu muốn ghi nhớ tất cả trước khi đi, nhưng rồi tự bật cười. Nếu muốn nhớ, cậu hoàn toàn có thể trở về.</p>
+          <p>Chuyến đi bắt đầu mà không có đoàn người tiễn đưa hay tiếng kèn rộn rã. Chỉ có tiếng giày chạm vào con đường sỏi và một cơn gió nhẹ thổi theo sau.</p>
+          <p>Ở trang đầu tiên của cuốn sổ, cậu viết: “Chương một — hôm nay mình đã dám bước đi.” Rồi cậu khép sổ lại, bước về phía ánh nắng.</p>
+        </div>
+        <div class="chapter-footer"><a class="back-to-top" href="#dau-trang">↑ Về đầu trang</a> <a class="next-chapter" href="#muc-luc">Xem mục lục ↑</a></div>
+      </section>
+      <footer class="reader-footer">
+        <span>✦ HẾT TRUYỆN ✦</span>
+        <p>Nội dung hư cấu viết riêng để minh họa bài thực hành HTML/CSS; không phải chương truyện chính thức.</p>
+        <a href="#dau-trang">Quay về đầu trang ↑</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

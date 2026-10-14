@@ -1,0 +1,95 @@
+/* BAI THUC HANH CSS: TRANG DOC TRUYEN - STYLES EXTERNAL */
+:root {
+  --ink: #192d43;
+  --muted: #647789;
+  --blue: #1e507c;
+  --navy: #203d5e;
+  --accent: #3979ab;
+  --paper: #fffefb;
+  --soft: #f1f5f8;
+  --border: #dfe7ed;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif; /* font-family */
+  color: var(--ink); /* color */
+  background: linear-gradient(180deg, #eaf2f8 0, #f7f9fb 310px, #f5f7f8 100%);
+}
+a { color: var(--blue); }
+a:focus-visible { outline: 3px solid #f4a940; outline-offset: 3px; border-radius: 4px; }
+
+/* Bước 4: ảnh bìa đặt ngay đầu trang */
+.cover { max-width: 1536px; margin: 0 auto; background: #b3d5ed; box-shadow: 0 8px 24px #15395b16; }
+.cover img { display: block; width: 100%; height: auto; }
+
+/* Bước 7: định dạng và căn giữa tiêu đề truyện */
+.page-intro { max-width: 1050px; margin: 0 auto; padding: 38px 20px 27px; text-align: center; }
+.page-intro .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .21em; }
+.page-intro h1 { margin: 12px 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(27px, 3.7vw, 43px); line-height: 1.25; color: #173a5a; text-align: center; }
+.page-intro > p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.intro-tags { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.intro-tags span { font-size: 12px; color: #396b91; background: #e7f0f7; padding: 5px 11px; border-radius: 20px; border: 1px solid #d2e4f1; }
+
+/* Bước 1 + 5 + 8: mục lục trong khung viền, nền màu, padding, hover */
+.page-layout { max-width: 1280px; margin: 0 auto; padding: 5px 24px 65px; display: grid; grid-template-columns: 310px minmax(0, 1fr); gap: 24px; align-items: start; }
+.toc { position: sticky; top: 20px; border: 1px solid var(--border); border-radius: 14px; background-color: var(--paper); overflow: hidden; box-shadow: 0 7px 22px #1c3c5810; }
+.toc-heading { padding: 18px 20px; color: #fff; background-color: var(--navy); font-family: Georgia, serif; font-size: 22px; font-weight: bold; }
+.toc-heading span { margin-right: 8px; }
+.toc-items { padding: 9px 8px; }
+.toc-entry { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 400; }
+.toc-entry + .toc-entry { border-top: 1px solid #eef1f4; }
+.toc-entry a { display: flex; align-items: center; gap: 9px; border-radius: 8px; color: #273e55; padding: 14px 9px; line-height: 1.5; text-decoration: none; transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+.toc-entry a:hover { background-color: #eaf3fc; color: #09549e; text-decoration: underline; transform: translateX(2px); }
+.toc-number { color: var(--accent); font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: .07em; }
+.toc-arrow { margin-left: auto; color: #81a0b9; font-family: Arial, sans-serif; }
+.toc-note { border-top: 1px solid var(--border); color: #70849a; font-family: Georgia, serif; font-style: italic; font-size: 14px; text-align: center; padding: 24px 22px 26px; line-height: 1.9; }
+
+/* Bước 2 + 3: mỗi phần truyện có id tương ứng href từ mục lục */
+.reading-content { min-width: 0; }
+.reader-note { margin: 0 0 18px; color: #688199; text-align: center; font-size: 13px; }
+.reader-note span { color: var(--accent); }
+.chapter { scroll-margin-top: 20px; padding: clamp(23px, 4vw, 44px); margin-bottom: 24px; background-color: var(--paper); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 7px 25px #1c3c580c; transition: border-color .2s ease, box-shadow .2s ease; }
+.chapter:target { border-color: #80b6dd; box-shadow: 0 0 0 3px #2a8ed521, 0 8px 25px #1c3c580c; }
+.chapter-topline { display: flex; gap: 15px; align-items: center; font-size: 10px; color: var(--accent); letter-spacing: .15em; font-weight: 700; }
+.chapter-topline span:nth-child(2) { color: #aabfce; }
+.chapter h2 { margin: 15px 0 8px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(28px, 3vw, 39px); line-height: 1.2; color: #142f4b; }
+.chapter-subtitle { margin: 0 0 25px; color: var(--muted); font-family: Georgia, serif; font-size: 17px; font-style: italic; padding-bottom: 17px; border-bottom: 1px solid #e5edf3; }
+
+/* Bước 9: căn đều, giãn dòng, thụt đầu dòng văn bản */
+.prose { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; color: #283746; }
+.prose p { margin: 0 0 20px; line-height: 1.95; text-align: justify; text-indent: 36px; hyphens: none; }
+.prose p:first-child::first-letter { font-size: 1.4em; color: #276498; font-weight: bold; }
+.chapter-footer { margin-top: 28px; padding-top: 19px; border-top: 1px solid #e9eef2; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+.chapter-footer a { font-size: 13px; text-decoration: none; font-weight: bold; }
+.chapter-footer a:hover { text-decoration: underline; color: #0b6cae; }
+.reader-footer { text-align: center; color: var(--muted); padding: 12px 20px 30px; font-size: 13px; line-height: 1.7; }
+.reader-footer > span { font-weight: bold; color: #2d5d88; letter-spacing: .25em; }
+.reader-footer a { text-decoration: none; font-weight: bold; }
+.reader-footer a:hover { text-decoration: underline; }
+
+@media (max-width: 830px) {
+  .page-layout { grid-template-columns: 1fr; gap: 18px; padding: 4px 16px 45px; }
+  .toc { position: static; }
+  .toc-heading { font-size: 19px; }
+  .toc-items { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 4px; }
+  .toc-entry + .toc-entry { border-top: 0; }
+  .toc-entry a { min-height: 60px; background: #f4f8fb; }
+  .toc-note { padding: 12px; }
+  .page-intro { padding-top: 27px; }
+}
+@media (max-width: 520px) {
+  .toc-items { grid-template-columns: 1fr; }
+  .page-intro h1 { font-size: 26px; }
+  .chapter { padding: 24px 19px; }
+  .chapter h2 { font-size: 28px; }
+  .prose { font-size: 16px; }
+  .prose p { line-height: 1.85; text-indent: 28px; }
+  .chapter-topline { letter-spacing: .06em; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .toc-entry a, .chapter { transition: none; }
+}
