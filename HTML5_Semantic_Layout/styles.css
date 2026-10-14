@@ -1,0 +1,125 @@
+/* BÀI THỰC HÀNH CODEGYM: HTML5 SEMANTIC LAYOUT
+   Các thẻ chính: header, nav, section, article, aside, footer.
+   Bố cục: HEADER / NAV / [SECTION + ASIDE] / FOOTER.
+*/
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d3147;
+    background-color: #f2f5fa;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: #1454a0; }
+a:focus-visible { outline: 3px solid #f5a623; outline-offset: 3px; }
+
+.page-wrapper {
+    width: min(1100px, calc(100% - 48px));
+    margin: 32px auto;
+}
+
+.region-label {
+    display: inline-block;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 5px 9px;
+    border-radius: 6px;
+    color: #1d5188;
+    background: #e3effc;
+    margin-bottom: 10px;
+}
+
+/* 1. HEADER - nằm trên cùng. */
+.site-header {
+    padding: 35px 42px;
+    text-align: center;
+    background-color: #ddeafa;
+    border: 2px solid #94b7de;
+    border-radius: 14px 14px 0 0;
+}
+.site-header h1 { margin: 2px 0 8px; color: #163d6c; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.site-header p { margin: 0; color: #496582; }
+
+/* 2. NAV - đặt ngay dưới header. */
+.main-nav {
+    background-color: #214b78;
+    padding: 13px 24px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.main-nav .region-label { margin: 0; background: #426b99; color: #fff; }
+.main-nav ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.main-nav a { display: block; color: #fff; font-size: .94rem; font-weight: 600; padding: 10px 12px; border-radius: 7px; text-decoration: none; }
+.main-nav a:hover, .main-nav a:focus-visible { background: #376caa; }
+
+/* 3. MAIN: section chiếm phần lớn, aside nằm bên phải. */
+.content-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+.articles-section, .sidebar {
+    border-radius: 12px;
+    border: 2px solid #b7cde5;
+    padding: 24px;
+}
+.articles-section { background: #e9f2fc; }
+.articles-section h2, .sidebar h2 { margin: 0 0 12px; font-size: 1.6rem; }
+.section-intro { margin: 0 0 20px; line-height: 1.65; color: #49617e; }
+
+/* 4. ARTICLE: bài viết riêng nằm trong section. */
+.article-card {
+    background-color: #fff;
+    border: 1px solid #cbd9e7;
+    border-left: 5px solid #4280bc;
+    border-radius: 9px;
+    padding: 20px 22px;
+    margin-top: 16px;
+    box-shadow: 0 4px 12px rgb(25 65 105 / 5%);
+}
+.article-card .region-label { color: #246b55; background: #e3f7ee; }
+.article-card h3 { margin: 0 0 12px; font-size: 1.16rem; }
+.article-card p { margin: 10px 0; line-height: 1.65; }
+.article-card code { color: #9b3960; background: #f9edf2; padding: 2px 4px; border-radius: 3px; }
+
+/* 5. ASIDE: cột thông tin bổ trợ. */
+.sidebar { background-color: #f0eefa; border-color: #cdc5e9; }
+.sidebar .region-label { color: #7043a1; background: #e6ddf6; }
+.sidebar p { line-height: 1.6; }
+.sidebar h3 { font-size: 1rem; margin: 22px 0 8px; }
+.sidebar ul { margin: 0; padding-left: 20px; }
+.sidebar li { margin: 12px 0; }
+.sidebar a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.tip-box { margin-top: 26px; padding: 16px; background: #fff; border-radius: 8px; line-height: 1.6; border: 1px solid #ded6f3; }
+
+/* 6. FOOTER: kết thúc và trải rộng theo trang. */
+.site-footer {
+    background-color: #dce8f4;
+    border: 2px solid #acc4dd;
+    border-radius: 0 0 14px 14px;
+    padding: 24px 32px;
+    text-align: center;
+}
+.site-footer .region-label { display: table; margin: 0 auto 12px; }
+.site-footer p { margin: 0 0 8px; color: #436180; }
+.site-footer a { font-weight: 600; }
+
+/* Responsive: màn hình hẹp thì section và aside xếp dọc. */
+@media (max-width: 760px) {
+    .page-wrapper { width: min(100% - 24px, 550px); margin: 12px auto; }
+    .site-header { padding: 28px 16px; }
+    .main-nav { padding: 13px; gap: 10px; }
+    .main-nav ul { gap: 3px; }
+    .main-nav a { padding: 9px; }
+    .content-layout { grid-template-columns: 1fr; gap: 14px; padding: 14px 0; }
+    .articles-section, .sidebar { padding: 18px; }
+    .article-card { padding: 16px; }
+    .site-footer { padding: 20px 12px; }
+}
