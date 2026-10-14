@@ -1,0 +1,80 @@
+/* JSP JSTL Customer List — pure CSS, no client-side JS */
+:root {
+    color-scheme: light;
+    --text: #19304b;
+    --muted: #687b90;
+    --line: #e7ecf4;
+    --blue: #2963ce;
+    --background: #f5f8fd;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: radial-gradient(ellipse 900px 400px at 50% -130px, #e4edff 0%, transparent 75%), var(--background);
+    color: var(--text);
+}
+.page-shell { width: min(100% - 40px, 980px); margin: 66px auto; }
+.page-header { text-align: center; margin-bottom: 34px; }
+.eyebrow { font-size: .71rem; font-weight: 800; letter-spacing: .13em; color: var(--blue); }
+h1 { font-size: clamp(1.8rem, 4vw, 2.55rem); letter-spacing: -.04em; line-height: 1.18; margin: 12px 0; }
+.page-header p { font-size: .96rem; color: var(--muted); margin: 0; }
+.page-header code { font-size: .9em; color: #3a5c9c; background: #e9effa; padding: 2px 5px; border-radius: 4px; }
+.table-card {
+    background: white;
+    border: 1px solid #dae4f2;
+    border-radius: 16px;
+    box-shadow: 0 16px 44px rgba(33, 70, 128, .09), 0 2px 7px rgba(33,70,128,.04);
+    overflow: hidden;
+}
+.card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 23px 30px 18px; }
+.card-heading h2 { font-size: 1.12rem; margin: 0; letter-spacing: -.02em; }
+.total-count { color: #315da7; border-radius: 25px; background: #ecf3ff; padding: 7px 13px; font-size: .8rem; font-weight: 700; white-space: nowrap; }
+.table-scroll { width: 100%; }
+.customer-table { width: 100%; border-collapse: collapse; text-align: left; }
+.customer-table thead { background: #f6f9fd; }
+.customer-table th { color: #526781; font-size: .74rem; letter-spacing: .02em; font-weight: 750; padding: 14px 30px; }
+.customer-table th:last-child, .customer-table td:last-child { text-align: center; }
+.customer-table td { padding: 12px 30px; border-top: 1px solid var(--line); font-size: .92rem; color: #53647b; }
+.customer-table tr:hover td { background: #f9fbff; }
+.customer-table .customer-name { font-weight: 750; color: #18324f; }
+.customer-avatar { width: 54px; height: 54px; display: inline-block; border-radius: 13px; border: 1px solid rgba(42,81,142,.10); object-fit: cover; vertical-align: middle; }
+.card-footer { border-top: 1px solid var(--line); padding: 15px 30px; color: #8290a3; font-size: .76rem; }
+.empty-state { text-align: center !important; padding: 32px !important; }
+@media (max-width: 640px) {
+    .page-shell { width: min(100% - 26px, 480px); margin: 30px auto; }
+    .page-header { margin-bottom: 24px; }
+    .page-header p { line-height: 1.6; }
+    .card-heading { padding: 19px 16px 17px; }
+    .card-heading h2 { font-size: 1rem; }
+    .total-count { font-size: .72rem; padding: 6px 9px; }
+    .customer-table thead { display: none; }
+    .customer-table tbody { display: grid; gap: 0; }
+    .customer-table tr {
+        display: grid;
+        grid-template-columns: 64px minmax(0,1fr);
+        grid-template-areas: "photo name" "photo birthday" "photo address";
+        column-gap: 15px;
+        padding: 17px 18px;
+        border-top: 1px solid var(--line);
+        align-items: center;
+    }
+    .customer-table td {
+        display: block;
+        border: 0;
+        padding: 2px 0;
+        font-size: .87rem;
+        min-width: 0;
+        text-align: left !important;
+    }
+    .customer-table td:nth-child(1) { grid-area: name; font-size: .96rem; }
+    .customer-table td:nth-child(2) { grid-area: birthday; }
+    .customer-table td:nth-child(3) { grid-area: address; }
+    .customer-table td:nth-child(4) { grid-area: photo; align-self: center; }
+    .customer-table td:nth-child(2)::before { content: "Ngày sinh: "; color: #8695a5; }
+    .customer-table td:nth-child(3)::before { content: "Địa chỉ: "; color: #8695a5; }
+    .customer-avatar { width: 62px; height: 62px; border-radius: 12px; }
+    .card-footer { padding: 14px 18px; }
+}
