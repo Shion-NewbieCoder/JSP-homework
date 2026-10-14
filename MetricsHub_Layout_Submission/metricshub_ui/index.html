@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MetricsHub — bài thực hành lựa chọn Flexbox, CSS Grid và Bootstrap 5 cho từng vùng giao diện.">
+    <title>MetricsHub | Responsive Dashboard</title>
+    <!-- Bootstrap 5.3.6 (MIT) luu trong vendor/ de chay offline va co luoi 12 cot cho Pricing. -->
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Chuyển tới nội dung chính</a>
+
+    <!-- 1D: Navbar dùng Flexbox, không chia 200px/600px/200px cứng. -->
+    <header class="site-header">
+        <nav class="navbar-flex page-width" aria-label="Điều hướng chính">
+            <a class="brand" href="#overview" aria-label="MetricsHub - trang đầu">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="12" width="5" height="11" rx="1.5" fill="currentColor"/><rect x="10" y="7" width="5" height="16" rx="1.5" fill="currentColor"/><rect x="18" y="2" width="5" height="21" rx="1.5" fill="currentColor"/></svg>
+                </span>
+                <span>Metrics<span class="brand-accent">Hub</span></span>
+            </a>
+
+            <div class="nav-links" aria-label="Các mục">
+                <a class="nav-link-custom active" href="#overview">Tổng quan</a>
+                <a class="nav-link-custom" href="#dashboard">Dashboard</a>
+                <a class="nav-link-custom" href="#pricing">Bảng giá</a>
+                <a class="nav-link-custom long-label" href="#audit">Datenanalyse-Dashboard</a>
+            </div>
+
+            <div class="nav-actions">
+                <span class="demo-pill"><span class="online-dot"></span> Demo Mode</span>
+                <a class="profile-chip" href="#audit" aria-label="Đến mục giải thích lựa chọn công nghệ"><span class="avatar">MH</span><span class="profile-text">Front-end Lab</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-width">
+        <section class="intro" id="overview" aria-labelledby="intro-title">
+            <div>
+                <p class="eyebrow"><span class="eyebrow-line"></span> FRONT-END UI / UX ENGINEERING</p>
+                <h1 id="intro-title">Dashboard thông minh,<br><span>layout đúng công cụ.</span></h1>
+                <p class="intro-desc">Kết hợp Flexbox, CSS Grid và Bootstrap 5 theo đúng bản chất của mỗi thành phần — dễ bảo trì, dễ mở rộng và thích ứng trên mọi màn hình.</p>
+            </div>
+            <div class="intro-badge" aria-label="Thông tin bản demo">
+                <span class="intro-badge-icon" aria-hidden="true">↗</span>
+                <span><strong>3 công nghệ</strong><small>1 giao diện thống nhất</small></span>
+            </div>
+        </section>
+
+        <section class="dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">02 / CSS GRID</p>
+                    <h2 id="dashboard-title">Bento Dashboard</h2>
+                    <p class="section-subtitle">Các widget nằm trực tiếp dưới cùng một Grid container, không cần cột Flexbox lồng nhau.</p>
+                </div>
+                <span class="time-filter" aria-label="Khoảng thời gian minh họa">30 ngày gần nhất <span aria-hidden="true">⌄</span></span>
+            </div>
+
+            <!-- 2D: Tất cả widget là siblings trong .grid-dashboard. -->
+            <div class="grid-dashboard">
+                <article class="widget widget-featured" aria-labelledby="visitors-title">
+                    <div class="widget-header">
+                        <div>
+                            <p class="widget-label">LƯỢT TRUY CẬP</p>
+                            <h3 id="visitors-title" class="metric-large">328,450 <span class="growth-tag">↗ +18,6%</span></h3>
+                            <p class="widget-muted">Tổng lượng truy cập tháng này <span class="contrast-note">· Dữ liệu minh họa</span></p>
+                        </div>
+                        <span class="widget-symbol" aria-hidden="true">↗</span>
+                    </div>
+                    <div class="chart-area">
+                        <svg class="line-chart" viewBox="0 0 760 245" role="img" aria-label="Biểu đồ đường lượng truy cập minh họa có xu hướng tăng">
+                            <defs>
+                                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6965ef" stop-opacity="0.23"/><stop offset="100%" stop-color="#6965ef" stop-opacity="0.005"/></linearGradient>
+                            </defs>
+                            <path d="M0 38 H760 M0 95 H760 M0 153 H760 M0 210 H760" stroke="#e9ecf5" stroke-width="1" stroke-dasharray="5 6"/>
+                            <path d="M0 195 C42 184 61 196 94 161 S148 145 184 163 S241 108 279 124 S324 145 361 100 S408 113 441 87 S501 103 540 67 S583 103 628 54 S690 74 715 28 S741 38 760 17 L760 244 L0 244 Z" fill="url(#chartFill)"/>
+                            <path d="M0 195 C42 184 61 196 94 161 S148 145 184 163 S241 108 279 124 S324 145 361 100 S408 113 441 87 S501 103 540 67 S583 103 628 54 S690 74 715 28 S741 38 760 17" fill="none" stroke="#6965ef" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="715" cy="28" r="7" fill="#6965ef" stroke="white" stroke-width="4"/>
+                        </svg>
+                        <div class="chart-legend"><span>01/09</span><span>08/09</span><span>15/09</span><span>22/09</span><span>30/09</span></div>
+                    </div>
+                    <div class="featured-bottom"><span class="legend-dot"></span> Lượt xem trang <span class="featured-secondary">Xu hướng tăng ổn định so với kỳ trước</span></div>
+                </article>
+
+                <article class="widget widget-revenue" aria-label="Doanh thu minh họa">
+                    <div class="metric-top"><span class="round-icon violet" aria-hidden="true">₫</span><span class="small-trend">+12,4% ↗</span></div>
+                    <p class="widget-label">DOANH THU</p>
+                    <p class="metric">₫ 84,2M</p>
+                    <p class="widget-muted">So với 30 ngày trước</p>
+                    <div class="mini-bars" aria-hidden="true"><i style="height:28%"></i><i style="height:49%"></i><i style="height:36%"></i><i style="height:64%"></i><i style="height:51%"></i><i style="height:82%"></i><i style="height:100%"></i></div>
+                </article>
+
+                <article class="widget widget-orders" aria-label="Đơn hàng minh họa">
+                    <div class="metric-top"><span class="round-icon green" aria-hidden="true">◫</span><span class="small-trend">+8,2% ↗</span></div>
+                    <p class="widget-label">ĐƠN HÀNG</p>
+                    <p class="metric">2.845</p>
+                    <p class="widget-muted">Giao dịch thành công</p>
+                    <div class="progress-track" role="img" aria-label="Tỷ lệ mục tiêu đơn hàng đã hoàn thành là 78%"><span style="width:78%"></span></div>
+                    <p class="progress-caption">78% mục tiêu tháng</p>
+                </article>
+
+                <article class="widget widget-small" aria-label="Tỷ lệ chuyển đổi minh họa">
+                    <span class="round-icon peach" aria-hidden="true">◎</span>
+                    <p class="widget-label">CHUYỂN ĐỔI</p>
+                    <p class="metric-small">4,86%</p>
+                    <span class="widget-muted">Tăng 0,9% trong kỳ</span>
+                </article>
+
+                <article class="widget widget-small" aria-label="Khách hàng mới minh họa">
+                    <span class="round-icon blue" aria-hidden="true">♙</span>
+                    <p class="widget-label">KHÁCH HÀNG MỚI</p>
+                    <p class="metric-small">1.284</p>
+                    <span class="widget-muted">+16% so với kỳ trước</span>
+                </article>
+
+                <article class="widget widget-small" aria-label="Uptime minh họa">
+                    <span class="round-icon green" aria-hidden="true">✓</span>
+                    <p class="widget-label">ĐỘ ỔN ĐỊNH</p>
+                    <p class="metric-small">99,98%</p>
+                    <span class="widget-muted">Theo dõi vận hành</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="pricing-section" id="pricing" aria-labelledby="pricing-title">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">03 / BOOTSTRAP 5</p>
+                    <h2 id="pricing-title">Gói dịch vụ</h2>
+                    <p class="section-subtitle">Lưới Bootstrap 12 cột: 3 thẻ trên desktop, tự xếp dọc trên mobile.</p>
+                </div>
+            </div>
+            <!-- Bootstrap Grid: row + col-12 col-md-4. Không có CSS riêng để chia cột pricing. -->
+            <div class="container-fluid px-0">
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <div class="card-body p-4 p-xl-5 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-3"><span class="badge text-bg-light px-3 py-2">STARTER</span></div>
+                                <h3 class="h5 fw-bold">Gói Cơ bản</h3>
+                                <p class="text-secondary small">Dành cho dự án cá nhân</p>
+                                <p class="h2 fw-bold mt-2">Miễn phí</p>
+                                <p class="text-secondary small mb-4">Khám phá dữ liệu của bạn</p>
+                                <ul class="list-unstyled small lh-lg mb-4"><li>✓ 1 bảng điều khiển</li><li>✓ Báo cáo cơ bản</li><li>✓ Cộng đồng hỗ trợ</li></ul>
+                                <a href="#audit" class="btn btn-outline-primary w-100 mt-auto">Khám phá</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 shadow-sm border-primary border-2 rounded-4">
+                            <div class="card-body p-4 p-xl-5 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-3"><span class="badge text-bg-primary px-3 py-2">PHỔ BIẾN</span><span class="text-primary small fw-semibold">Đề xuất</span></div>
+                                <h3 class="h5 fw-bold">Gói Nâng cao</h3>
+                                <p class="text-secondary small">Dành cho nhóm đang phát triển</p>
+                                <p class="h2 fw-bold mt-2">299K <span class="fs-6 fw-normal text-secondary">/ tháng</span></p>
+                                <p class="text-secondary small mb-4">Nhiều công cụ phân tích hơn</p>
+                                <ul class="list-unstyled small lh-lg mb-4"><li>✓ 10 bảng điều khiển</li><li>✓ Cảnh báo tự động</li><li>✓ Báo cáo nâng cao</li></ul>
+                                <a href="#audit" class="btn btn-primary w-100 mt-auto">Chọn gói</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <div class="card-body p-4 p-xl-5 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-3"><span class="badge text-bg-light px-3 py-2">ENTERPRISE</span></div>
+                                <h3 class="h5 fw-bold">Gói Doanh nghiệp</h3>
+                                <p class="text-secondary small">Dành cho tổ chức lớn</p>
+                                <p class="h2 fw-bold mt-2">Liên hệ</p>
+                                <p class="text-secondary small mb-4">Giải pháp triển khai linh hoạt</p>
+                                <ul class="list-unstyled small lh-lg mb-4"><li>✓ Bảng điều khiển không giới hạn</li><li>✓ Phân quyền và SSO</li><li>✓ Hỗ trợ ưu tiên</li></ul>
+                                <a href="#audit" class="btn btn-outline-primary w-100 mt-auto">Tư vấn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audit-section" id="audit" aria-labelledby="audit-title">
+            <div class="section-heading"><div><p class="section-kicker">01 / 02 / 03 — KIẾN TRÚC</p><h2 id="audit-title">Chọn đúng công cụ cho đúng việc</h2></div></div>
+            <div class="audit-notes">
+                <p><strong>Flexbox — 1D:</strong> Menu co giãn theo nội dung và tự xuống dòng nhờ <code>flex-wrap</code>. Không còn các cột cố định 200px/600px/200px.</p>
+                <p><strong>CSS Grid — 2D:</strong> Widget lớn dùng <code>grid-column: span 2</code> và <code>grid-row: span 2</code>; các widget còn lại là phần tử anh em trong một grid.</p>
+                <p><strong>Bootstrap — 12 cột:</strong> Ba gói giá dùng <code>row</code> và <code>col-12 col-md-4</code>. Bootstrap tự chia 1 cột trên mobile và 3 cột từ 768px.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="page-width footer-inner"><span><strong>MetricsHub</strong> · Thực hành Flexbox × Grid × Bootstrap</span><span>Dữ liệu giao diện chỉ để minh họa · 2026</span></div></footer>
+</body>
+</html>
