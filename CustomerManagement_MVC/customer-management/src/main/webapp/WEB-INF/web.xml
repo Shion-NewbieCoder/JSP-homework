@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <display-name>Customer Management MVC - Skeleton</display-name>
+    <!-- Servlet URL /customers is declared with @WebServlet in CustomerServlet.java.
+         GET/POST handlers are intentionally not implemented in this scaffold. -->
+</web-app>

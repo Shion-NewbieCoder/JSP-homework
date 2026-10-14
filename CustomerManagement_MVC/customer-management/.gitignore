@@ -1,0 +1,9 @@
+# Local build output and IDE settings
+/target/
+/.idea/
+*.iml
+/.settings/
+/.classpath
+/.project
+/.vscode/
+.DS_Store
