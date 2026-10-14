@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout - Thực hành DIV và CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page" id="top">
+        <!-- Thanh điều hướng trên cùng, tạo bằng DIV và CSS. -->
+        <div class="navbar">
+            <div class="nav-links">
+                <a class="logo" href="#top">Logo</a>
+                <a class="nav-link active" href="#welcome" aria-current="page">Home</a>
+                <a class="nav-link" href="#welcome">About</a>
+                <a class="nav-link" href="#test">Projects</a>
+                <a class="nav-link" href="#footer">Contact</a>
+            </div>
+            <a class="login" href="#footer" title="Bản minh họa bố cục, chưa có đăng nhập">↪ Login</a>
+        </div>
+
+        <!-- Bố cục ba cột: sidebar - nội dung - quảng cáo. -->
+        <div class="layout">
+            <div class="sidebar-left" aria-label="Liên kết bên trái">
+                <a href="#welcome">Link</a>
+                <a href="#test">Link</a>
+                <a href="#footer">Link</a>
+            </div>
+
+            <div class="main-content">
+                <div class="content-block" id="welcome">
+                    <h1>Welcome</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <div class="content-block" id="test">
+                    <h2>Test</h2>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+
+            <div class="sidebar-right" aria-label="Quảng cáo mẫu">
+                <div class="ad">ADS</div>
+                <div class="ad">ADS</div>
+            </div>
+        </div>
+
+        <div class="footer" id="footer">Footer Text</div>
+    </div>
+</body>
+</html>
