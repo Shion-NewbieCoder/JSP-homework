@@ -1,0 +1,53 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d2947;
+    background: linear-gradient(145deg,#f5f8ff,#ebf1ff);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(32px,7vw,80px) 16px;
+}
+.container { width: min(100%,460px); }
+.eyebrow { color:#486cbe; font-size: 12px; font-weight: 700; letter-spacing: .18em; }
+h1 { margin: 10px 0 7px; font-size: clamp(30px,6vw,38px); letter-spacing:-.04em; }
+.lead { color:#64728c; line-height:1.6; font-size:14px; margin:0 0 28px; }
+.calculator-card,.result-card {
+    background:#fff;
+    border:1px solid #dce4f4;
+    border-radius:18px;
+    padding:26px;
+    box-shadow: 0 18px 54px rgba(46,66,110,.09);
+}
+fieldset { border:0; padding:0; margin:0; min-width:0; }
+legend { font-size:18px; font-weight:700; margin-bottom:22px; padding:0; }
+label { display:block; margin:16px 0 7px; font-size:13px; font-weight:700; }
+input,select {
+    width:100%; height:46px; padding:0 13px; border:1px solid #cbd5e5;
+    border-radius:9px; background:#fff; color:#1d2947; font:inherit;
+}
+input:focus-visible,select:focus-visible,button:focus-visible,.back-link:focus-visible {
+    outline:3px solid #a9c4ff; outline-offset:2px;
+}
+button {
+    margin-top:24px; width:100%; height:48px; border:0; border-radius:9px;
+    background:#2266e6; color:#fff; font:inherit; font-weight:700;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;
+}
+button:hover { background:#1554c8; }
+button span { font-size:21px; }
+.note { margin:20px 0 0; color:#64728c; font-size:13px; line-height:1.65; }
+.note strong { color:#2a416f; }
+footer { margin-top:45px; text-align:center; font-size:12px; color:#8290ab; }
+.result-label { color:#5378bd; font-size:11px; font-weight:700; letter-spacing:.18em; }
+.calculation { font-size:18px; color:#62728b; margin:18px 0 4px; overflow-wrap:anywhere; }
+.answer { font-size:38px; font-weight:700; letter-spacing:-.03em; margin:5px 0 0; overflow-wrap:anywhere; }
+.result-card.error { border-color:#f4c9cf; background:#fffafa; }
+.error .result-label { color:#b91c1c; }
+.error-message { font-size:19px; line-height:1.5; font-weight:700; color:#a71f32; }
+.back-link { display:inline-block; margin-top:24px; color:#1554c8; font-weight:700; text-decoration:none; }
+.back-link:hover { text-decoration:underline; }
+@media (max-width:380px) { .calculator-card,.result-card { padding:20px; } }
