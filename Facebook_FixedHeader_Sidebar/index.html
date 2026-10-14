@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Bài thực hành HTML5 và CSS: fixed header, sidebar hai bên và bảng tin mạng xã hội.">
+  <title>SocialSpace — Facebook Layout Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Bộ biểu tượng SVG nội bộ; ứng dụng không cần mạng hoặc thư viện ngoài. -->
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="icon-video" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 5v1"/></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 1-8 8 9 9 0 0 1-3-.5L4 20l1.5-5A8 8 0 1 1 20 11Z"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+    <symbol id="icon-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14a4 4 0 0 0 8 0M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="icon-like" viewBox="0 0 24 24"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2zm0 0 4-8a3 3 0 0 1 3 3v4h5a3 3 0 0 1 2.8 4L20 19a3 3 0 0 1-3 2H7"/></symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24"><path d="m14 5 7 7-7 7v-4c-6 0-9 2-11 6 0-8 4-13 11-13z"/></symbol>
+    <symbol id="icon-bookmark" viewBox="0 0 24 24"><path d="M5 3h14v18l-7-5-7 5z"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19 13 2 1-2 4-2-1-2 1v2H9v-2l-2-1-2 1-2-4 2-1v-2l-2-1 2-4 2 1 2-1V4h6v2l2 1 2-1 2 4-2 1z"/></symbol>
+    <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+  </svg>
+
+  <!-- Header được cố định bằng position: fixed trong styles.css. -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="brand" href="#top" aria-label="SocialSpace - Đầu trang">s</a>
+      <label class="search-box" for="global-search">
+        <svg class="icon"><use href="#icon-search"/></svg>
+        <input id="global-search" type="search" placeholder="Tìm kiếm trên SocialSpace" autocomplete="off" aria-label="Tìm kiếm bài viết">
+      </label>
+    </div>
+    <nav class="top-navigation" aria-label="Điều hướng chính">
+      <a class="nav-tab active" href="#feed" aria-label="Trang chủ" aria-current="page"><svg class="icon"><use href="#icon-home"/></svg><span class="nav-text">Trang chủ</span></a>
+      <a class="nav-tab" href="#watch" aria-label="Video"><svg class="icon"><use href="#icon-video"/></svg><span class="nav-text">Video</span></a>
+      <a class="nav-tab" href="#groups" aria-label="Nhóm"><svg class="icon"><use href="#icon-users"/></svg><span class="nav-text">Nhóm</span></a>
+    </nav>
+    <div class="topbar-right">
+      <button class="icon-button hide-small" type="button" aria-label="Tạo mới" title="Mở khung đăng bài" data-focus-composer><svg class="icon"><use href="#icon-plus"/></svg></button>
+      <button class="icon-button hide-small" type="button" aria-label="Tin nhắn" title="Minh họa giao diện"><svg class="icon"><use href="#icon-chat"/></svg></button>
+      <button class="icon-button" type="button" aria-label="Thông báo" title="Minh họa giao diện"><svg class="icon"><use href="#icon-bell"/></svg><span class="notification-dot"></span></button>
+      <span class="avatar avatar-me" title="Tài khoản demo">M</span>
+    </div>
+  </header>
+
+  <div id="top" class="page-anchor"></div>
+
+  <!-- Sidebar trái/phải cố định vị trí và tự cuộn khi nội dung dài. -->
+  <aside class="sidebar sidebar-left" aria-label="Thanh bên trái">
+    <a href="#profile" class="sidebar-item"><span class="avatar avatar-me">M</span><span>Minh Nguyễn</span></a>
+    <a href="#friends" class="sidebar-item"><span class="side-icon blue">👥</span><span>Bạn bè</span></a>
+    <a href="#groups" class="sidebar-item"><span class="side-icon purple">♣</span><span>Nhóm</span></a>
+    <a href="#watch" class="sidebar-item"><span class="side-icon blue">▶</span><span>Video</span></a>
+    <a href="#memories" class="sidebar-item"><span class="side-icon orange">◷</span><span>Kỷ niệm</span></a>
+    <a href="#saved" class="sidebar-item"><span class="side-icon violet"><svg class="icon"><use href="#icon-bookmark"/></svg></span><span>Đã lưu</span></a>
+    <a href="#events" class="sidebar-item"><span class="side-icon coral"><svg class="icon"><use href="#icon-calendar"/></svg></span><span>Sự kiện</span></a>
+    <div class="sidebar-separator"></div>
+    <h2 class="sidebar-heading">Lối tắt của bạn</h2>
+    <a href="#groups" class="sidebar-item"><span class="shortcut-icon">FE</span><span>Cộng đồng Frontend</span></a>
+    <a href="#groups" class="sidebar-item"><span class="shortcut-icon shortcut-alt">UI</span><span>UI/UX Việt Nam</span></a>
+    <a href="#watch" class="sidebar-item"><span class="shortcut-icon shortcut-warm">JS</span><span>Học JavaScript mỗi ngày</span></a>
+    <p class="sidebar-note">Bản thiết kế minh họa cho bài tập HTML/CSS · Không liên kết với Facebook.</p>
+  </aside>
+
+  <main id="feed" class="feed" aria-label="Bảng tin chính">
+    <div class="intro-strip">
+      <span class="intro-dot"></span>
+      <span>Góc nhỏ để chia sẻ những điều thú vị mỗi ngày</span>
+      <span class="intro-tag">Bảng tin</span>
+    </div>
+
+    <section class="stories" aria-label="Tin của bạn bè">
+      <h1 class="sr-only">Trang chủ SocialSpace</h1>
+      <div class="stories-head"><h2>Tin nổi bật</h2><span>Cập nhật hôm nay</span></div>
+      <div class="story-grid">
+        <article class="story story-own"><span class="story-orb orb-one"></span><span class="story-add">+</span><strong>Tạo tin</strong></article>
+        <article class="story story-sea"><span class="story-avatar avatar avatar-blue">L</span><span class="story-orb orb-two"></span><strong>Linh Trần</strong></article>
+        <article class="story story-green"><span class="story-avatar avatar avatar-green">H</span><span class="story-orb orb-three"></span><strong>Hà Phương</strong></article>
+        <article class="story story-sunset"><span class="story-avatar avatar avatar-gold">K</span><span class="story-orb orb-four"></span><strong>Khánh An</strong></article>
+      </div>
+    </section>
+
+    <section class="card composer" aria-labelledby="composer-title">
+      <h2 id="composer-title" class="sr-only">Tạo bài viết</h2>
+      <form id="composer-form">
+        <div class="composer-input-row">
+          <span class="avatar avatar-me" aria-hidden="true">M</span>
+          <textarea id="post-input" rows="1" maxlength="800" aria-label="Nội dung bài viết mới" placeholder="Minh ơi, bạn đang nghĩ gì?"></textarea>
+        </div>
+        <div class="composer-divider"></div>
+        <div class="composer-actions">
+          <span class="composer-hint"><svg class="icon"><use href="#icon-image"/></svg> Chia sẻ câu chuyện của bạn</span>
+          <button type="submit" class="primary-button">Đăng bài <svg class="icon"><use href="#icon-plus"/></svg></button>
+        </div>
+        <p id="composer-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="posts-list" aria-label="Các bài viết" id="posts-list">
+      <article class="card post" data-searchable="minh học css bố cục fixed header sidebar thiết kế web socialspace">
+        <div class="post-header">
+          <span class="avatar avatar-me">M</span>
+          <div class="post-author"><strong>Minh Nguyễn</strong><span>12 phút · <span aria-label="Công khai">🌐</span></span></div>
+          <button class="post-more" type="button" aria-label="Thêm tùy chọn"><svg class="icon"><use href="#icon-more"/></svg></button>
+        </div>
+        <p class="post-text">Vừa hoàn thành một bài thực hành mới! ✨<br>Hôm nay mình học cách tạo <strong>fixed header</strong>, hai thanh <strong>sidebar</strong> và phần nội dung chính bằng HTML5 + CSS. Nhìn giao diện do mình tự dựng lên vẫn thấy vui ghê! 💙</p>
+        <div class="post-visual code-visual" role="img" aria-label="Hình minh họa lập trình với thẻ HTML và CSS">
+          <div class="code-window"><div class="code-window-dots"><i></i><i></i><i></i></div><pre><span>&lt;header</span> class="fixed"<span>&gt;</span> ... <span>&lt;/header&gt;</span>
+<span>&lt;aside</span> class="sidebar"<span>&gt;</span> ... <span>&lt;/aside&gt;</span>
+<span>&lt;main&gt;</span> Hello, world! <span>&lt;/main&gt;</span></pre></div>
+          <span class="visual-tag">#FrontendJourney</span>
+        </div>
+        <div class="post-stats"><span><span class="reaction-dot">♥</span> <span class="like-count">28</span> lượt thích</span><span>6 bình luận · 2 lượt chia sẻ</span></div>
+        <div class="post-actions"><button type="button" class="action-button like-button" aria-pressed="false"><svg class="icon"><use href="#icon-like"/></svg> Thích</button><button type="button" class="action-button comment-button"><svg class="icon"><use href="#icon-chat"/></svg> Bình luận</button><button type="button" class="action-button share-button"><svg class="icon"><use href="#icon-share"/></svg> Chia sẻ</button></div>
+        <div class="comments-box" hidden><label class="sr-only" for="comment-one">Viết bình luận</label><input id="comment-one" class="comment-input" placeholder="Viết bình luận..." maxlength="200"><button type="button" class="comment-submit">Gửi</button><div class="comment-items"></div></div>
+      </article>
+
+      <article class="card post" data-searchable="linh trần cuối tuần góc cà phê ảnh chill cuộc sống">
+        <div class="post-header"><span class="avatar avatar-blue">L</span><div class="post-author"><strong>Linh Trần <span class="verified" title="Tài khoản minh họa">✓</span></strong><span>2 giờ · <span aria-label="Công khai">🌐</span></span></div><button class="post-more" type="button" aria-label="Thêm tùy chọn"><svg class="icon"><use href="#icon-more"/></svg></button></div>
+        <p class="post-text">Một chút bình yên giữa tuần. Đôi khi chỉ cần một ly cà phê, một cuốn sách hay và thời gian cho bản thân là đủ. ☕🌿</p>
+        <div class="post-visual cafe-visual" role="img" aria-label="Minh họa cốc cà phê và sách trong nắng">
+          <span class="sun-disc"></span><div class="coffee-illustration"><span class="cup-steam">〰</span><span class="cup-body">☕</span><span class="cup-book">📖</span></div><span class="cafe-caption">little moments, big memories.</span>
+        </div>
+        <div class="post-stats"><span><span class="reaction-dot">♥</span> <span class="like-count">164</span> lượt thích</span><span>18 bình luận · 3 lượt chia sẻ</span></div>
+        <div class="post-actions"><button type="button" class="action-button like-button" aria-pressed="false"><svg class="icon"><use href="#icon-like"/></svg> Thích</button><button type="button" class="action-button comment-button"><svg class="icon"><use href="#icon-chat"/></svg> Bình luận</button><button type="button" class="action-button share-button"><svg class="icon"><use href="#icon-share"/></svg> Chia sẻ</button></div>
+        <div class="comments-box" hidden><label class="sr-only" for="comment-two">Viết bình luận</label><input id="comment-two" class="comment-input" placeholder="Viết bình luận..." maxlength="200"><button type="button" class="comment-submit">Gửi</button><div class="comment-items"></div></div>
+      </article>
+
+      <article class="card post" data-searchable="frontend nhóm học hỏi cộng đồng html css lập trình chia sẻ">
+        <div class="post-header"><span class="avatar avatar-green">FE</span><div class="post-author"><strong>Cộng đồng Frontend</strong><span>Hôm qua · <span aria-label="Công khai">🌐</span></span></div><button class="post-more" type="button" aria-label="Thêm tùy chọn"><svg class="icon"><use href="#icon-more"/></svg></button></div>
+        <p class="post-text">💡 Mẹo CSS hôm nay: Dùng <code>position: fixed</code> cho header và sidebar khi muốn giữ nguyên vị trí lúc cuộn trang. Đừng quên chừa khoảng trống với <code>padding-top</code> cho nội dung chính nhé!</p>
+        <div class="tip-visual"><span>01</span><div><strong>Học từ những điều cơ bản.</strong><p>Mỗi dòng CSS đều đưa bạn đến gần hơn với một giao diện hoàn chỉnh.</p></div></div>
+        <div class="post-stats"><span><span class="reaction-dot">♥</span> <span class="like-count">82</span> lượt thích</span><span>12 bình luận</span></div>
+        <div class="post-actions"><button type="button" class="action-button like-button" aria-pressed="false"><svg class="icon"><use href="#icon-like"/></svg> Thích</button><button type="button" class="action-button comment-button"><svg class="icon"><use href="#icon-chat"/></svg> Bình luận</button><button type="button" class="action-button share-button"><svg class="icon"><use href="#icon-share"/></svg> Chia sẻ</button></div>
+        <div class="comments-box" hidden><label class="sr-only" for="comment-three">Viết bình luận</label><input id="comment-three" class="comment-input" placeholder="Viết bình luận..." maxlength="200"><button type="button" class="comment-submit">Gửi</button><div class="comment-items"></div></div>
+      </article>
+    </section>
+    <p class="end-note">Bạn đã xem hết bảng tin demo ✨<br><span>Thực hành HTML5 · CSS3 · JavaScript cơ bản</span></p>
+  </main>
+
+  <aside class="sidebar sidebar-right" aria-label="Thanh bên phải">
+    <div class="sidebar-group"><div class="sidebar-group-head"><h2>Được tài trợ</h2><span class="subtle-pill">Demo</span></div>
+      <div class="sponsor"><span class="sponsor-art"><span>{ }</span></span><div><strong>Học Frontend mỗi ngày</strong><small>Bài tập CSS & HTML5</small></div></div>
+    </div>
+    <div class="sidebar-separator"></div>
+    <div class="sidebar-group"><div class="sidebar-group-head"><h2>Lời mời kết bạn</h2><span class="link-muted">Xem tất cả</span></div>
+      <div class="friend-request"><span class="avatar avatar-gold">A</span><div class="friend-info"><strong>An Hoàng</strong><small>3 bạn chung</small><div class="request-actions"><button class="request-accept" type="button">Xác nhận</button><button class="request-remove" type="button">Xóa</button></div></div></div>
+    </div>
+    <div class="sidebar-separator"></div>
+    <div class="sidebar-group"><div class="sidebar-group-head"><h2>Người liên hệ</h2><svg class="icon quiet"><use href="#icon-search"/></svg></div>
+      <div class="contact"><span class="avatar avatar-blue online">L</span><span>Linh Trần</span></div>
+      <div class="contact"><span class="avatar avatar-green online">H</span><span>Hà Phương</span></div>
+      <div class="contact"><span class="avatar avatar-gold online">K</span><span>Khánh An</span></div>
+      <div class="contact"><span class="avatar avatar-purple online">T</span><span>Tuấn Anh</span></div>
+      <div class="contact"><span class="avatar avatar-coral">V</span><span>Vy Nguyễn</span></div>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
