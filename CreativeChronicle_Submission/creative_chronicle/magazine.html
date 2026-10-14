@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CreativeChronicle — tạp chí nghệ thuật và nhiếp ảnh. Bài thực hành Frontend dùng Flexbox, CSS Grid và Bootstrap.">
+  <title>CreativeChronicle — Khi thiên nhiên kể chuyện bằng ánh sáng</title>
+  <!-- Bootstrap 5 Grid/System Utilities: packaged locally for offline review -->
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="editorial-strip">
+    <div class="container-xl editorial-strip-inner">
+      <span>CREATIVECHRONICLE / ISSUE 08</span>
+      <span>Tạp chí nghệ thuật &amp; những góc nhìn mới</span>
+    </div>
+  </div>
+  <header class="site-header">
+    <nav class="site-nav container-xl" aria-label="Điều hướng chính">
+      <a class="wordmark" href="#top" aria-label="CreativeChronicle — Trang đầu">CREATIVE<span>•</span><small>CHRONICLE</small></a>
+      <div class="nav-links">
+        <a class="active" href="#story">Bài viết</a>
+        <a href="#gallery">Thư viện ảnh</a>
+        <a href="#recommended">Khám phá</a>
+        <a href="#about">Về chúng tôi</a>
+      </div>
+      <a class="nav-action" href="#recommended">Khám phá thêm <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <article class="feature-article container-xl" id="story">
+      <header class="article-header">
+        <div class="article-kicker"><span class="kicker-line" aria-hidden="true"></span> GÓC NHÌN / NHIẾP ẢNH / SỐ 08</div>
+        <h1>Khi thiên nhiên kể chuyện <em>bằng ánh sáng.</em></h1>
+        <p class="article-deck">Có những chuyến đi không bắt đầu từ một tấm bản đồ, mà từ khoảnh khắc ta chịu dừng lại để nhìn thế giới chậm hơn một nhịp.</p>
+      </header>
+
+      <!-- 1D: flex aligns avatar, name, date and share actions vertically. No float/clearfix. -->
+      <div class="author-section" aria-label="Thông tin tác giả">
+        <div class="author-identity">
+          <img class="author-avatar" src="assets/author-avatar.svg" alt="Minh hoạ chân dung tác giả Minh Anh" width="58" height="58">
+          <div class="author-details">
+            <div class="author-name">Nguyễn Minh Anh <span class="verified" aria-label="Biên tập viên">✦</span></div>
+            <div class="author-date">Biên tập viên thị giác <span aria-hidden="true">·</span> 25.10.2026 <span aria-hidden="true">·</span> 6 phút đọc</div>
+          </div>
+        </div>
+        <div class="share-actions" aria-label="Chia sẻ bài viết">
+          <span class="share-label">CHIA SẺ</span>
+          <a class="share-btn" href="mailto:?subject=CreativeChronicle%20-%20Khi%20thi%C3%AAn%20nhi%C3%AAn%20k%E1%BB%83%20chuy%E1%BB%87n" aria-label="Chia sẻ qua email" title="Chia sẻ qua email">✉ <span>Email</span></a>
+          <button class="share-btn" id="copy-link" type="button" aria-label="Sao chép đường dẫn bài viết" title="Sao chép liên kết">↗ <span id="copy-label">Sao chép</span></button>
+        </div>
+      </div>
+
+      <!-- 2D: CSS Grid automatically sizes content; main image spans two rows. -->
+      <section class="visual-story" id="gallery" aria-label="Thư viện ảnh khảm">
+        <div class="mosaic-gallery">
+          <figure class="mosaic-photo photo-main">
+            <img src="assets/gallery-main.webp" alt="Hồ xanh ngọc dưới dãy núi cao, phản chiếu rừng cây" width="420" height="470">
+            <figcaption class="visually-hidden">Núi và mặt hồ yên ả</figcaption>
+          </figure>
+          <figure class="mosaic-photo photo-side-one">
+            <img src="assets/gallery-sub-1.webp" alt="Cánh đồng hoa oải hương tím dưới hoàng hôn" width="420" height="470">
+            <figcaption class="visually-hidden">Màu tím trước hoàng hôn</figcaption>
+          </figure>
+          <figure class="mosaic-photo photo-side-two">
+            <img src="assets/gallery-sub-2.webp" alt="Nắng chiếu xuyên tán rừng xanh" width="420" height="470">
+            <figcaption class="visually-hidden">Ánh nắng xuyên rừng</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-credit"><span>01—03 / FIELD NOTES</span><span>Hình minh họa tự tạo · CSS Grid Mosaic</span></p>
+      </section>
+
+      <div class="article-content">
+        <p class="intro">Ánh sáng luôn là người kể chuyện thầm lặng nhất. Nó đi qua một mặt hồ xanh, lướt trên những cánh đồng hoa tím rồi len vào khoảng trống giữa hai thân cây. Mỗi nơi nó chạm tới đều lưu giữ một sắc độ cảm xúc mà không câu chữ nào có thể ghi chép trọn vẹn.</p>
+        <p>Trong nhiếp ảnh, khung hình không chỉ là nơi lưu một cảnh đẹp. Đó còn là cách ta chọn nhìn thế giới: điều gì được đặt ở tiền cảnh, điều gì được để mờ, và vì sao một khoảng lặng có thể đáng nhớ hơn cả sự rực rỡ.</p>
+        <blockquote>“Một bức ảnh đẹp không đơn thuần cho ta thấy nơi chốn. Nó khiến ta muốn được đứng ở đó, dù chỉ trong một khoảnh khắc.”</blockquote>
+        <p>Từ dãy núi soi bóng xuống mặt hồ đến vệt nắng cuối ngày băng qua cánh rừng, thiên nhiên luôn thay đổi theo thời gian. Có lẽ điều đặc biệt nhất của hành trình khám phá là học cách quan sát những thay đổi rất nhỏ ấy — rồi mang câu chuyện về nhà.</p>
+      </div>
+      <div class="article-endmark" aria-hidden="true">✦</div>
+    </article>
+
+    <section id="recommended" class="recommendations" aria-labelledby="recommended-title">
+      <div class="container-xl">
+        <div class="section-heading">
+          <div><p class="section-eyebrow">KHÁM PHÁ TIẾP</p><h2 id="recommended-title">Câu chuyện dành cho bạn</h2></div>
+          <a class="more-link" href="#top">Về đầu trang ↑</a>
+        </div>
+        <!-- Bootstrap 12-column Grid only for Recommended: 1 / 2 / 4 cards. -->
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card article-card h-100 border-0">
+              <img class="card-img-top" src="assets/card-1.webp" alt="Bờ biển với sóng xanh" loading="lazy" width="420" height="470">
+              <div class="card-body"><p class="card-category">DU LỊCH / 04 PHÚT</p><h3 class="card-title">Nơi đại dương chạm vào những vách đá</h3><p class="card-text">Đi tìm thanh âm bình yên giữa các con sóng và gió biển.</p><a href="#story" class="stretched-link" aria-label="Đọc bài Nơi đại dương chạm vào những vách đá">Khám phá <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card article-card h-100 border-0">
+              <img class="card-img-top" src="assets/card-2.webp" alt="Thác nước trắng giữa rừng" loading="lazy" width="420" height="470">
+              <div class="card-body"><p class="card-category">THIÊN NHIÊN / 05 PHÚT</p><h3 class="card-title">Âm thanh trong veo giữa khu rừng</h3><p class="card-text">Câu chuyện về những dòng nước chưa bao giờ ngừng chảy.</p><a href="#story" class="stretched-link" aria-label="Đọc bài Âm thanh trong veo giữa khu rừng">Khám phá <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card article-card h-100 border-0">
+              <img class="card-img-top" src="assets/card-3.webp" alt="Cực quang nhiều màu trên hồ" loading="lazy" width="420" height="470">
+              <div class="card-body"><p class="card-category">NHIẾP ẢNH / 06 PHÚT</p><h3 class="card-title">Đêm nào bầu trời cũng có phép màu</h3><p class="card-text">Những dải sáng ở miền cực Bắc khiến ta ngước nhìn.</p><a href="#story" class="stretched-link" aria-label="Đọc bài Đêm nào bầu trời cũng có phép màu">Khám phá <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card article-card h-100 border-0">
+              <img class="card-img-top" src="assets/card-4.webp" alt="Đồi cát vàng dưới ánh nắng chiều" loading="lazy" width="420" height="470">
+              <div class="card-body"><p class="card-category">KHÁM PHÁ / 03 PHÚT</p><h3 class="card-title">Một ngày đi qua miền cát vàng</h3><p class="card-text">Khi bóng tối và ánh sáng cùng vẽ nên một đường chân trời.</p><a href="#story" class="stretched-link" aria-label="Đọc bài Một ngày đi qua miền cát vàng">Khám phá <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="about">
+    <div class="container-xl footer-inner">
+      <div><strong>CREATIVE<span>•</span>CHRONICLE</strong><p>Nhìn thế giới bằng những góc nhìn khác.</p></div>
+      <div class="footer-note">© 2026 CreativeChronicle · Website demo học tập<br>Layout: Flexbox + CSS Grid + Bootstrap 5</div>
+    </div>
+  </footer>
+  <script>
+    // Tiny progressive enhancement, layout remains HTML/CSS without JavaScript.
+    const copyButton = document.getElementById('copy-link');
+    copyButton.addEventListener('click', async () => {
+      const label = document.getElementById('copy-label');
+      try {
+        if (!navigator.clipboard || !window.isSecureContext) throw new Error('Unavailable');
+        await navigator.clipboard.writeText(window.location.href);
+        label.textContent = 'Đã sao chép!';
+      } catch (_) {
+        label.textContent = 'Dùng Ctrl+C URL';
+      }
+      copyButton.setAttribute('aria-label', label.textContent);
+    });
+  </script>
+</body>
+</html>

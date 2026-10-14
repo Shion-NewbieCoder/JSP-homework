@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Minh hoạ tác giả">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8c9a9"/><stop offset="1" stop-color="#a8bfb6"/></linearGradient></defs>
+<rect width="120" height="120" rx="60" fill="url(#b)"/>
+<path d="M13 120c4-31 23-48 47-48s43 17 47 48" fill="#243d47"/>
+<ellipse cx="60" cy="51" rx="26" ry="32" fill="#f4d3bd"/>
+<path d="M33 55c-4-24 7-40 26-42 21-3 33 12 29 36-8-4-12-13-14-21-12 13-29 18-41 27Z" fill="#352b2d"/>
+<path d="M52 56h1M70 56h1" stroke="#3c3030" stroke-width="4" stroke-linecap="round"/>
+<path d="M54 67q6 5 12 0" fill="none" stroke="#9d6664" stroke-width="3" stroke-linecap="round"/>
+</svg>
