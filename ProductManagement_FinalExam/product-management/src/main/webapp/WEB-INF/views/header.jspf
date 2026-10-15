@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>${fn:escapeXml(pageTitle)} | ProductDesk</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="${pageContext.request.contextPath}/products" aria-label="ProductDesk - Trang chủ">
+        <span class="brand-symbol">P<span>.</span></span>
+        <span class="brand-label">ProductDesk <small>PRODUCT MANAGEMENT</small></span>
+      </a>
+      <span class="topbar-tag">JSP · Servlet · JDBC</span>
+    </div>
+  </header>
+  <main class="container main-content">
