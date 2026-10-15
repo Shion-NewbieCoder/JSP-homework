@@ -1,0 +1,7 @@
+</main>
+<footer class="footer shell">
+    <span>ProductHub · Bài thực hành MVC sử dụng JSP / Servlet</span>
+    <span>Demo in-memory · Không sử dụng database</span>
+</footer>
+</body>
+</html>
