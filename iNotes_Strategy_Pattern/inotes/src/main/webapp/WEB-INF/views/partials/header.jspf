@@ -1,0 +1,17 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>iNotes · Ghi chú thông minh</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/style.css"/>
+</head><body>
+<div class="app-shell">
+<header class="topbar">
+ <a class="brand" href="${pageContext.request.contextPath}/notes"><span class="brand-mark">✦</span><span>iNotes<small>Note management</small></span></a>
+ <nav class="top-nav" aria-label="Điều hướng chính">
+  <a href="${pageContext.request.contextPath}/notes">Danh sách</a>
+  <a class="btn btn-primary btn-sm" href="${pageContext.request.contextPath}/notes?action=create">+ Ghi chú mới</a>
+ </nav>
+</header>
+<main class="main">
