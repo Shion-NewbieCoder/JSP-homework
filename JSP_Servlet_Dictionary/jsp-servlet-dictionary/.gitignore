@@ -1,0 +1,8 @@
+target/
+.test-build/
+.idea/
+.settings/
+.classpath
+.project
+.vscode/
+*.class
