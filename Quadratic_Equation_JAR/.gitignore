@@ -1,0 +1,6 @@
+# Maven, javac: source repo ignores temporary builds; the binary in app/lib is intentional.
+**/target/
+*.log
+.idea/
+.vscode/
+*.iml
